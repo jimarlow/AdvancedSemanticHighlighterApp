@@ -78,7 +78,7 @@ class SemanticHighlighterApp(Frame):
         highlighterFrame.pack(side=LEFT, fill=BOTH, expand=True, padx=5, pady=5)
 
         # The highlighter combo box
-        self.selectHighlighterCombobox = Combobox(highlighterFrame)
+        self.selectHighlighterCombobox = Combobox(highlighterFrame, state='readonly')
         self.selectHighlighterCombobox.bind("<<ComboboxSelected>>", self.comboboxSelection)
         self.selectHighlighterCombobox.pack(side=TOP, padx=5, pady=5)
 
