@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SemanticHighlighterApp.iml" filepath="$PROJECT_DIR$/.idea/SemanticHighlighterApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/TKInterTest.iml" filepath="$PROJECT_DIR$/.idea/TKInterTest.iml" />
     </modules>
   </component>
 </project>

@@ -3,16 +3,18 @@ import os, glob
 HIGHLIGHTER_EXT = '.hil'
 
 class Highlighter:
-    def __init__(self, fname, name='Test', foreground='white', background='red'):
+    def __init__(self, fname, load=True):
         self.fname = fname
-        self.name = name
-        self.foreground = foreground
-        self.background = background
+        self.name = None
+        self.foreground = None
+        self.background = None
         self.terms = []
-        self.load()
+        self.terms.sort()
+        if load: self.load()
 
     def addTerm(self, term):
-        if self.containsTerm(term):return # No duplicates allowed
+        # Keep the terms in a sorted set
+        if self.containsTerm(term): return  # No duplicates allowed
         self.terms.append(term)
         self.terms.sort()
 
@@ -34,7 +36,7 @@ class Highlighter:
                 for line in self.terms:
                     f.write(line + '\n')
         except Exception as e:
-            print("Highlihgter file save error: ", e)
+            print("Highlighter file save error: ", e)
 
     def load(self):
         try:
@@ -46,7 +48,7 @@ class Highlighter:
                 for line in lines[3:]:
                     self.addTerm(line.strip())
         except Exception as e:
-            print("Highlihgter file load error: ",e)
+            print("Highlighter file load error: ", e)
 
     def __str__(self):
         return "Class Highlighter fname: " + self.fname
